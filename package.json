@@ -1,0 +1,26 @@
+{
+  "name": "blog-adm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reita009/Blog-Adm.git"
+  },
+  "author": "Julio Santana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reita009/Blog-Adm/issues"
+  },
+  "homepage": "https://github.com/reita009/Blog-Adm#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7"
+  }
+}
