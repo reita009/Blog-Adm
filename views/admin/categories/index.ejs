@@ -4,7 +4,11 @@
 <div class="container">
   <hr />
   <h2>Categorias</h2>
+  <a href="/admin/categories/new" class="btn btn btn-success"
+    >Criar nova categoria</a
+  >
   <hr />
+
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -15,12 +19,24 @@
       </tr>
     </thead>
     <tbody>
+      <% categories.forEach(category =>{ %>
       <tr>
-        <th>1</th>
-        <th>Dev-web</th>
-        <th>dev-web</th>
-        <th></th>
+        <th><%= category.id %></th>
+        <th><%= category.title %></th>
+        <th><%= category.slug %></th>
+        <th>
+          <button class="btn btn-warning">Editar</button>
+          <form
+            style="display: inline"
+            method="POST"
+            action="/categories/delete"
+          >
+            <input type="hidden" name="id" value="<%=category.id%>" />
+            <button type="submit" class="btn btn-danger">Deletar</button>
+          </form>
+        </th>
       </tr>
+      <% }) %>
     </tbody>
   </table>
 </div>
