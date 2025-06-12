@@ -30,6 +30,7 @@
             style="display: inline"
             method="POST"
             action="/categories/delete"
+            onsubmit="alertDelete(event, this)"
           >
             <input type="hidden" name="id" value="<%=category.id%>" />
             <button type="submit" class="btn btn-danger">Deletar</button>
@@ -42,3 +43,16 @@
 </div>
 
 <%- include ('../../partials/footer.ejs');%>
+
+<script>
+  const alertDelete = (event, form) => {
+    event.preventDefault();
+    let decision = confirm("Você quer deletar essa categoria?");
+
+    if (decision) {
+      form.submit();
+    } else {
+      console.log("Não Deleta");
+    }
+  };
+</script>
